@@ -17,7 +17,7 @@ function verify_gpg_passphrase() {
   read -s passphrase
   [ -z "$passphrase" ] && abort "Empty passphrase"
 
-  # Try to decrypt the top level, if not successful, exit
+  # Try to encrypt a test file at repo top level with the passphrase, if not successful, exit
   userids=$(gpg --list-keys | grep pub | grep -oE "/(\w+) " | tr '/' ' ')
   foundkey=1
   echo "test" > /tmp/gpg_test.in
