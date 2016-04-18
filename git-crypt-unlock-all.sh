@@ -58,10 +58,10 @@ do
         git-crypt unlock $keyfile
       else
         expect <<EOF
-  spawn git-crypt unlock
-  expect "Enter passphrase:"
-  send "$passphrase\r"; 
-  expect eof
+spawn git-crypt unlock
+expect "Enter passphrase:"
+send "$passphrase\r"; 
+expect eof
 EOF
       fi
     )
