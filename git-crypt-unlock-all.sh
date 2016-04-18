@@ -35,7 +35,7 @@ then
   verify_gpg_passphrase
   [ $foundkey -ne 0 ] && abort "Unable to decrypt."
 else
-  keyfile=".git-crypt/keys/$1"
+  keyfile="$1"
   [ ! -f $keyfile ] && abort "unable to read $keyfile."
 fi
 
